@@ -61,6 +61,7 @@ jobs:
           # Ensure optional dependencies are installed (fix for Rollup native modules)
           npm install --no-audit --no-fund --force
 
+      # .env (with VITE_GA_MEASUREMENT_ID) is loaded from the repo by Vite at build time
       - name: Build
         env:
           NODE_ENV: production

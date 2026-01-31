@@ -1,9 +1,13 @@
 import { Header, Hero, Footer } from './components';
 import { THEME_GRADIENT_CLASSES } from './constants';
+import { usePageTracking } from './hooks/useAnalytics';
 import { useTheme } from './hooks/useTheme';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
+
+  // Track page view for Google Analytics
+  usePageTracking('/', 'Manifesto | Simple is better than complex | Javid Mougamadou');
   const backgroundGradientClass = THEME_GRADIENT_CLASSES[theme];
 
   return (

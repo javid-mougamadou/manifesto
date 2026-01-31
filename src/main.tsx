@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
+import { initGA } from './utils/analytics';
 
 const rootElement = document.getElementById('root');
 
@@ -10,6 +11,9 @@ if (!rootElement) {
 }
 
 const root = ReactDOM.createRoot(rootElement);
+
+// Initialize Google Analytics
+initGA();
 
 root.render(
   <React.StrictMode>
